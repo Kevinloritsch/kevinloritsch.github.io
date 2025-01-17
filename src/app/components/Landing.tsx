@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import { useParallax } from "react-scroll-parallax";
 import Image from "next/image";
 
-import Mountain1 from "../../../public/Mountain1.png";
-import Mountain2 from "../../../public/Mountain2.png";
-import Cloud1 from "../../../public/Cloud1.png";
-import Cloud2 from "../../../public/Cloud2.png";
-import Cloud3 from "../../../public/Cloud3.png";
+import Mountain1 from "@/../public/Mountain1.png";
+import Mountain2 from "@/../public/Mountain2.png";
+import Cloud1 from "@/../public/Cloud1.png";
+import Cloud2 from "@/../public/Cloud2.png";
+import Cloud3 from "@/../public/Cloud3.png";
 
 const Landing = () => {
   const verticalUp = useParallax<HTMLDivElement>({
