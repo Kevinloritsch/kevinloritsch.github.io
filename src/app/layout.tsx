@@ -1,11 +1,13 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
 import { ReactQueryClientProvider } from "@/utils/react-query";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
+import { Poppins } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
-
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 export const metadata = {
   title: "Kevin Loritsch Portfolio",
   description: "A showcase of my projects and experience.",
@@ -18,7 +20,7 @@ type LayoutProps = {
 export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <Navbar />
         <ReactQueryClientProvider>{children}</ReactQueryClientProvider>
         <Footer />
