@@ -1,12 +1,12 @@
 import { StaticImageData } from "next/image";
-import ULA from "@/public/projects/ula.png";
-import Tree from "@/public/projects/tree.png";
-import FinalTake from "@/public/projects/finalTake.png";
-import PTSO from "@/public/projects/ptso.png";
-import Chess from "@/public/projects/chess.png";
-import AviatR from "@/public/projects/aviatr.png";
-import Leap from "@/public/projects/leap.png";
-import SquareRoot from "@/public/projects/squareRoot.png";
+import ULA from "@/public/projects/ula.webp";
+import Tree from "@/public/projects/tree.webp";
+import FinalTake from "@/public/projects/finalTake.webp";
+import PTSO from "@/public/projects/ptso.webp";
+import Chess from "@/public/projects/chess.webp";
+import AviatR from "@/public/projects/aviatr.webp";
+import Leap from "@/public/projects/leap.webp";
+import SquareRoot from "@/public/projects/squareRoot.webp";
 
 interface ProjectItem {
   image: StaticImageData;
