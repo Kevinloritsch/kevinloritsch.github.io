@@ -4,10 +4,10 @@ interface navbarItem {
 }
 
 const navbarItems: navbarItem[] = [
-  { name: "ABOUT ME", link: "/" },
-  { name: "EXPERIENCE", link: "/meow" },
-  { name: "PROJECTS", link: "/meow" },
-  { name: "SKILLS", link: "/meow" },
+  { name: "ABOUT ME", link: "home" },
+  { name: "EXPERIENCE", link: "experiences" },
+  { name: "PROJECTS", link: "projects" },
+  // { name: "SKILLS", link: "experience" },
 ];
 
 export default navbarItems;
