@@ -1,4 +1,4 @@
 const About = () => {
-  return <div className="h-screen">About</div>;
+  return <div className=""></div>;
 };
 export default About;
