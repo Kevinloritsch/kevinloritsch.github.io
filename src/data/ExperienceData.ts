@@ -84,8 +84,8 @@ const experienceItems: ExperienceItem[] = [
     name: "ACM@UCR",
     entries: [
       {
-        name: "Spark LEad",
-        date: "Oct 2023 - Present",
+        name: "Spark Lead",
+        date: "June 2024 - Present",
         description: [
           {
             description:
@@ -103,7 +103,7 @@ const experienceItems: ExperienceItem[] = [
       },
       {
         name: "VP External Affairs",
-        date: "Oct 2023 - Present",
+        date: "May 2025 - Present",
         description: [
           {
             description:
