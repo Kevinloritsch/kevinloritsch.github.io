@@ -1,5 +1,7 @@
+import ErrorMessage from "@/app/components/ErrorMessage";
+
 const NotFound = () => {
-  return <div>fix this before you fix the meowing</div>;
+  return <ErrorMessage description={"404 Page Not Found"} />;
 };
 
 export default NotFound;

@@ -22,7 +22,7 @@ const hoverAnimation = {
 
 const Navbar = () => {
   return (
-    <div className="mx-8 flex h-[10vh] justify-evenly">
+    <div className="fixed left-0 top-0 z-50 flex h-[10vh] justify-evenly bg-white px-8 shadow-xl">
       <div className="flex w-1/2 flex-row items-center gap-4 text-left">
         <Image src={profilePicture} alt="Kevin Loritsch" className="w-1/12" />
         <p className="font-bold">Kevin Loritsch</p>
