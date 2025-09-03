@@ -29,8 +29,8 @@ const Navbar = () => {
       </div>
       <div className="font flex w-1/2 flex-row items-center justify-end text-right">
         {navbarItems.map(({ name, link }, i) => (
-          <motion.div {...fadeIn(i / 5)}>
-            <motion.div key={i} className="pr-4" {...hoverAnimation}>
+          <motion.div {...fadeIn(i / 5)} key={i}>
+            <motion.div className="pr-4" {...hoverAnimation}>
               <Link href={link}> {name}</Link>
             </motion.div>
           </motion.div>

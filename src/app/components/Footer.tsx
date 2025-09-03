@@ -1,4 +1,4 @@
 const Footer = () => {
-  return <div className="h-screen">Hello</div>;
+  return <div className="w-full py-8 text-center">© Kevin Loritsch</div>;
 };
 export default Footer;
