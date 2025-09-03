@@ -12,56 +12,75 @@ interface ProjectItem {
   image: StaticImageData;
   title: string;
   description: string;
+  date: string;
+  role: string;
 }
 
 const projectItems: ProjectItem[] = [
   {
     image: ULA,
     title: "ULA Website",
+    date: "September 2025",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Served as Scrum Master and Project Lead on behalf of ACM@UCR to develop UCR's Website for Undergraduate Learning Assistants.",
+    role: "Lead",
   },
   {
     image: Tree,
     title: "Data Structures Website",
+    date: "In Progress",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Served as Scrum Master and Project Lead to develop a website to assist students with understanding elementary Data Structures. Contains visualizations of BSTs, AVL Trees, Heaps, and Sorting Algorithms.",
+    role: "Lead",
   },
   {
     image: PTSO,
     title: "PTSO Website",
+    date: "June 2025",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Served as Scrum Master and Project Lead on behalf of ACM@UCR to develop UCR's Website for the Pre-Therapy Student Organization.",
+    role: "Lead",
   },
   {
     image: FinalTake,
     title: "Hackathon Game",
+    date: "April 2025",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    image: AviatR,
-    title: "Aviat'R Website",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Our submission for Citrus Hack 2025. Helped develop a game where the user is a Movie Studio Executive, and has to make decisions that balance their budget while being environmentally friendly.",
+    role: "Developer",
   },
   {
     image: Chess,
+    date: "November 2024",
     title: "Parallelized Chess",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Developed parallelized AI chess engine implementing minimax with alpha-beta pruning. Optimized performance with pthreads, achieving 15x runtime improvement over sequential baseline",
+    role: "Project",
   },
+
+  {
+    image: AviatR,
+    date: "December 2024",
+    title: "Aviat'R Website",
+    description:
+      "Served as Scrum Master and Project Lead on behalf of ACM@UCR to develop UCR's Website for Aviat'R.",
+    role: "Lead",
+  },
+
   {
     image: Leap,
     title: "Leap Website",
+    date: "March 2025",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Served as Scrum Master and Project Lead on behalf of ACM@UCR to develop UCR's Website for Loving our Emotions as Asian and Pacific !slanders.",
+    role: "Lead",
   },
   {
     image: SquareRoot,
-    title: "Quick Magic Square Root",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    date: "January 2025",
+    title: "Magic Square Root",
+    description: "Implemented the Magic Square Root Formula.",
+    role: "Project",
   },
 ];
 

@@ -7,9 +7,11 @@ interface projectProps {
   image: StaticImageData;
   title: string;
   description: string;
+  date: string;
+  role: string;
 }
 
-const Project = ({ image, title, description }: projectProps) => {
+const Project = ({ image, title, description, date, role }: projectProps) => {
   return (
     <div className="mx-8">
       <p className="text-center text-xl font-bold">{title}</p>
@@ -39,12 +41,15 @@ const Project = ({ image, title, description }: projectProps) => {
           initial={{ opacity: 0 }}
           whileHover={{ opacity: 1 }}
         >
-          <p className="text-sm text-white">{description}</p>
+          <div className="flex flex-col gap-y-4 text-sm text-white">
+            <p>{date}</p>
+            <p>{description}</p>
+          </div>
         </motion.div>
       </motion.div>
       <div className="flex flex-row justify-evenly pt-3">
         <div className="mr-auto">Tech Stack</div>
-        <div className="ml-auto">Role on Project</div>
+        <div className="ml-auto">{role}</div>
       </div>
     </div>
   );
