@@ -9,7 +9,7 @@ interface projectProps {
   description: string;
 }
 
-const Projects = ({ image, title, description }: projectProps) => {
+const Project = ({ image, title, description }: projectProps) => {
   return (
     <div className="mx-8">
       <p className="text-center text-xl font-bold">{title}</p>
@@ -50,4 +50,4 @@ const Projects = ({ image, title, description }: projectProps) => {
   );
 };
 
-export default Projects;
+export default Project;
