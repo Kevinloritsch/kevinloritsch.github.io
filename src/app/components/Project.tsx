@@ -5,6 +5,13 @@ import { motion } from "motion/react";
 import { IconType } from "react-icons";
 import Link from "next/link";
 
+const hoverAnimation = {
+  whileHover: { scale: 1.1 },
+  transition: {
+    duration: 0.4,
+  },
+};
+
 interface techEntry {
   icon: IconType;
 }
@@ -39,9 +46,11 @@ const Project = ({
       <div className="my-1">
         <div className="mx-auto mb-3 flex flex-row justify-center gap-2">
           {links.map(({ icon: Icon, link }, i) => (
-            <Link href={link} target="_blank" key={i}>
-              <Icon className="text-xl" />
-            </Link>
+            <motion.div {...hoverAnimation}>
+              <Link href={link} target="_blank" key={i}>
+                <Icon className="text-xl" />
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -79,9 +88,9 @@ const Project = ({
       <div className="flex flex-row justify-evenly pt-3">
         <div className="mr-auto flex flex-row gap-2 pl-4">
           {techStack.map(({ icon: Icon }, i) => (
-            <div key={i} className="w-full">
+            <motion.div {...hoverAnimation} key={i}>
               <Icon className="text-xl" />
-            </div>
+            </motion.div>
           ))}
         </div>
 

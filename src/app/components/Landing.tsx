@@ -1,11 +1,19 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "motion/react";
 import { Element } from "react-scroll";
 
 import profilePicture from "@/public/profilePicture.webp";
 
 import { socialLinks } from "@/data/SocialData";
+
+const hoverAnimation = {
+  whileHover: { scale: 1.07 },
+  transition: {
+    duration: 0.4,
+  },
+};
 
 const Landing = () => {
   return (
@@ -27,7 +35,9 @@ const Landing = () => {
               <div className="mr-auto flex w-fit flex-row gap-4 border-t-2 border-black px-4 pt-2">
                 {socialLinks.map(({ link, icon: Icon }, i) => (
                   <Link key={i} href={link} target="_blank">
-                    <Icon className="text-4xl" />
+                    <motion.div {...hoverAnimation}>
+                      <Icon className="text-2xl" />
+                    </motion.div>
                   </Link>
                 ))}
               </div>
