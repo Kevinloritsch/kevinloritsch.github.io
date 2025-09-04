@@ -3,9 +3,15 @@
 import Image, { StaticImageData } from "next/image";
 import { motion } from "motion/react";
 import { IconType } from "react-icons";
+import Link from "next/link";
 
 interface techEntry {
   icon: IconType;
+}
+
+interface linkEntry {
+  icon: IconType;
+  link: string;
 }
 
 interface projectProps {
@@ -14,7 +20,8 @@ interface projectProps {
   description: string;
   date: string;
   role: string;
-  techStack?: techEntry[];
+  techStack: techEntry[];
+  links: linkEntry[];
 }
 
 const Project = ({
@@ -24,11 +31,20 @@ const Project = ({
   date,
   role,
   techStack,
+  links,
 }: projectProps) => {
   return (
     <div className="mx-8">
       <p className="text-center text-xl font-bold">{title}</p>
-      <div className="mb-4 text-center">Deploy Links</div>
+      <div className="my-1">
+        <div className="mx-auto flex flex-row justify-center gap-2">
+          {links.map(({ icon: Icon, link }, i) => (
+            <Link href={link} target="_blank" key={i}>
+              <Icon className="text-xl" />
+            </Link>
+          ))}
+        </div>
+      </div>
 
       <motion.div
         className="group relative aspect-[3/2] overflow-hidden rounded-2xl shadow-xl"
@@ -62,12 +78,11 @@ const Project = ({
       </motion.div>
       <div className="flex flex-row justify-evenly pt-3">
         <div className="mr-auto flex flex-row gap-2 pl-4">
-          {techStack &&
-            techStack.map(({ icon: Icon }, i) => (
-              <div key={i} className="w-full">
-                <Icon className="text-xl" />
-              </div>
-            ))}
+          {techStack.map(({ icon: Icon }, i) => (
+            <div key={i} className="w-full">
+              <Icon className="text-xl" />
+            </div>
+          ))}
         </div>
 
         <div className="ml-auto pr-4">{role}</div>
