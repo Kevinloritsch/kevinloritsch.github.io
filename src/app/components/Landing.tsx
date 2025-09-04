@@ -15,6 +15,24 @@ const hoverAnimation = {
   },
 };
 
+const slideIn = (delay = 0) => ({
+  initial: { opacity: 0, x: -10 },
+  whileInView: { opacity: 1, x: 0 },
+  transition: { duration: 0.8, delay },
+});
+
+const slideLeft = {
+  initial: { opacity: 0, x: 50 },
+  whileInView: { opacity: 1, x: 0 },
+  transition: { duration: 1.0 },
+};
+
+const slideRight = {
+  initial: { opacity: 0, x: -50 },
+  whileInView: { opacity: 1, x: 0 },
+  transition: { duration: 1.0 },
+};
+
 const Landing = () => {
   return (
     <div
@@ -34,30 +52,32 @@ const Landing = () => {
 
               <div className="mr-auto flex w-fit flex-row gap-4 border-t-2 border-black px-4 pt-2">
                 {socialLinks.map(({ link, icon: Icon }, i) => (
-                  <Link key={i} href={link} target="_blank">
-                    <motion.div {...hoverAnimation}>
-                      <Icon className="text-2xl" />
-                    </motion.div>
-                  </Link>
+                  <motion.div {...slideIn(i / 5)} key={i}>
+                    <Link href={link} target="_blank">
+                      <motion.div {...hoverAnimation}>
+                        <Icon className="text-2xl" />
+                      </motion.div>
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
-              <p className="py-4">
+              <motion.p {...slideLeft} className="py-4">
                 Hi! My name is Kevin, and I am a Computer Science student at UC
                 Riverside (Chancellor's Scholar, 4.0 GPA) with experience in
                 software engineering, research, and teaching.
-              </p>
-              <p>
+              </motion.p>
+              <motion.p {...slideLeft}>
                 I'm interested in exploring work in algorithm design, AI,
                 research, and teaching.
-              </p>
+              </motion.p>
             </div>
-            <div className="w-1/3">
+            <motion.div {...slideRight} className="w-1/3">
               <Image
                 src={profilePicture}
                 alt="Kevin Loritsch"
                 className="w-3/4"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </Element>

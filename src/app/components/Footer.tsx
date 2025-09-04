@@ -21,7 +21,7 @@ const Footer = () => {
   return (
     <div className="border-gray mx-auto h-[10vh] w-2/3 border-t-2 py-8 text-center">
       <p className="pt-2 text-center">© Kevin Loritsch</p>
-      <p className="pb-8">Last updated at: {lastCommit}</p>
+      <p className="pb-8">Last updated on: {lastCommit}</p>
     </div>
   );
 };
