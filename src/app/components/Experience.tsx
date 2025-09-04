@@ -101,9 +101,7 @@ const Experience = ({ image, name, entries }: experienceProps) => {
                 </motion.div>
                 <div>
                   {description.map(({ description }, j) => (
-                    <motion.p {...slideIn(i / 3 + (1.5 * j) / 9)} key={j}>
-                      {description}
-                    </motion.p>
+                    <motion.p key={j}>{description}</motion.p>
                   ))}
                 </div>
               </div>
