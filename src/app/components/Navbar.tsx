@@ -112,7 +112,7 @@ const Navbar = () => {
           <div className="mx-2 flex flex-col items-center gap-6 border-t-2 py-4 text-xl">
             {navbarItems.map(({ name, link }, i) => (
               <motion.div {...fadeIn(i / 5)} key={i}>
-                <motion.div className="pr-4" {...hoverAnimation}>
+                <motion.div {...hoverAnimation}>
                   <ScrollLink
                     to={link}
                     smooth={true}
