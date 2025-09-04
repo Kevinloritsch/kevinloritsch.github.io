@@ -15,49 +15,80 @@ const hoverAnimation = {
   },
 };
 
+const slideIn = (delay = 0) => ({
+  initial: { opacity: 0, x: -10 },
+  whileInView: { opacity: 1, x: 0 },
+  transition: { duration: 0.8, delay },
+});
+
+const slideLeft = {
+  initial: { opacity: 0, x: 50 },
+  whileInView: { opacity: 1, x: 0 },
+  transition: { duration: 1.0 },
+};
+
+const slideRight = {
+  initial: { opacity: 0, x: -50 },
+  whileInView: { opacity: 1, x: 0 },
+  transition: { duration: 1.0 },
+};
+
 const Landing = () => {
   return (
     <div
-      className="relative mt-[8vh] h-[90vh] w-full"
+      className="relative mt-[8vh] h-[95vh] w-full md:h-[90vh]"
       style={{
         background:
           "linear-gradient(to bottom, #C7BED3 0%, #C4BED5 16%, #E4BBB7 32%, #FEBF94 48%, #FEC68F 64%, #FEE2C7 90%, white 100%)",
       }}
     >
       <Element name="home">
-        <div className="absolute flex h-full w-full flex-row items-center justify-center gap-12">
-          <div className="flex w-2/3 flex-row justify-evenly">
-            <div className="flex w-2/3 flex-col">
-              <p className="flex pb-2 text-left text-4xl font-bold md:text-5xl lg:text-6xl">
+        <div className="absolute flex h-full w-full items-center justify-evenly gap-12">
+          <div className="flex w-3/4 flex-col justify-evenly md:w-2/3 md:flex-row">
+            <div className="flex w-full flex-col md:w-2/3">
+              <motion.div {...slideRight} className="mx-auto w-2/3 md:hidden">
+                <Image
+                  src={profilePicture}
+                  alt="Kevin Loritsch"
+                  className="w-full"
+                />
+              </motion.div>
+              <p className="mx-auto flex pb-2 pt-4 text-center text-3xl font-bold md:mx-0 md:pt-0 md:text-left md:text-5xl lg:text-6xl">
                 Kevin Loritsch
               </p>
 
-              <div className="mr-auto flex w-fit flex-row gap-4 border-t-2 border-black px-4 pt-2">
+              <div className="mx-auto flex w-fit flex-row gap-4 border-t-2 border-black px-4 pt-2 md:ml-0 md:mr-auto">
                 {socialLinks.map(({ link, icon: Icon }, i) => (
-                  <Link key={i} href={link} target="_blank">
-                    <motion.div {...hoverAnimation}>
-                      <Icon className="text-2xl" />
-                    </motion.div>
-                  </Link>
+                  <motion.div {...slideIn(i / 5)} key={i}>
+                    <Link href={link} target="_blank">
+                      <motion.div {...hoverAnimation}>
+                        <Icon className="text-2xl" />
+                      </motion.div>
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
-              <p className="py-4">
+
+              <motion.p
+                {...slideLeft}
+                className="py-4 text-center md:text-left"
+              >
                 Hi! My name is Kevin, and I am a Computer Science student at UC
                 Riverside (Chancellor's Scholar, 4.0 GPA) with experience in
                 software engineering, research, and teaching.
-              </p>
-              <p>
+              </motion.p>
+              <motion.p {...slideLeft} className="text-center md:text-left">
                 I'm interested in exploring work in algorithm design, AI,
                 research, and teaching.
-              </p>
+              </motion.p>
             </div>
-            <div className="w-1/3">
+            <motion.div {...slideRight} className="hidden w-1/3 md:flex">
               <Image
                 src={profilePicture}
                 alt="Kevin Loritsch"
                 className="w-3/4"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </Element>
