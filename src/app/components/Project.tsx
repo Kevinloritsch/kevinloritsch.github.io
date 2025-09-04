@@ -37,7 +37,7 @@ const Project = ({
     <div className="mx-8">
       <p className="text-center text-xl font-bold">{title}</p>
       <div className="my-1">
-        <div className="mx-auto flex flex-row justify-center gap-2">
+        <div className="mx-auto mb-3 flex flex-row justify-center gap-2">
           {links.map(({ icon: Icon, link }, i) => (
             <Link href={link} target="_blank" key={i}>
               <Icon className="text-xl" />
