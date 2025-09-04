@@ -96,7 +96,7 @@ const Project = ({
         </motion.div>
 
         <motion.div
-          className="absolute inset-0 flex items-center justify-center rounded-2xl bg-black/70 p-6 text-center"
+          className="absolute inset-0 flex select-none items-center justify-center rounded-2xl bg-black/70 p-6 text-center"
           style={{ backdropFilter: "blur(6px)" }}
           initial={{ opacity: 0 }}
           whileHover={{ opacity: 1 }}
