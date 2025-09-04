@@ -8,12 +8,13 @@ const Projects = () => {
     <Element name="projects">
       <Header
         title={"My Projects"}
-        subtitle={"Hover to learn about each project!"}
+        subtitle1={"Hover to learn about each project!"}
+        subtitle2={"Tap and hold to learn more!"}
       />
-      <div className="flex w-full flex-row flex-wrap justify-center">
+      <div className="flex w-full flex-col flex-wrap justify-center md:flex-row">
         {projectItems.map(
           ({ image, title, date, description, role, techStack, links }, i) => (
-            <div key={i} className="w-2/5 py-8">
+            <div key={i} className="mx-auto w-full py-8 md:mx-0 md:w-2/5">
               <Project
                 image={image}
                 title={title}

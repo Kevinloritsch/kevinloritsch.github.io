@@ -58,9 +58,9 @@ interface experienceProps {
 
 const Experience = ({ image, name, entries }: experienceProps) => {
   return (
-    <div className="mx-auto w-2/3">
-      <div className="flex w-full flex-row gap-4">
-        <div className="w-1/6">
+    <div className="mx-auto w-3/4 md:w-2/3">
+      <div className="flex w-full flex-col gap-4 md:flex-row">
+        <div className="mx-auto hidden w-1/4 md:mx-0 md:flex md:w-1/6 md:flex-col">
           <motion.p {...moveUp} className="text-center text-3xl font-bold">
             {name}
           </motion.p>
@@ -72,7 +72,19 @@ const Experience = ({ image, name, entries }: experienceProps) => {
             />
           </motion.div>
         </div>
-        <div className="border-gray w-5/6 justify-center border-l-2">
+        <div className="mx-auto w-1/2 md:mx-0 md:hidden md:w-1/6">
+          <motion.div {...hoverAnimation} {...fadeIn}>
+            <Image
+              src={image}
+              alt={name}
+              className="mx-auto aspect-square w-2/3 rounded-2xl shadow-xl"
+            />
+          </motion.div>
+          <motion.p {...moveUp} className="pt-2 text-center text-3xl font-bold">
+            {name}
+          </motion.p>
+        </div>
+        <div className="border-gray w-full justify-center border-l-2 md:w-5/6">
           {entries.map(({ name, date, description }, i) => (
             <motion.div
               {...slideIn(i / 3)}
@@ -81,9 +93,9 @@ const Experience = ({ image, name, entries }: experienceProps) => {
             >
               <div className="absolute -left-1.5 top-4 h-3 w-3 rounded-full bg-gray-500" />
               <div className="mx-4">
-                <motion.div className="flex flex-row justify-evenly">
+                <motion.div className="flex flex-col justify-evenly md:flex-row">
                   <p className="mr-auto text-lg underline">{name}</p>
-                  <motion.p {...fadeUp} className="ml-auto text-gray-500">
+                  <motion.p {...fadeUp} className="text-gray-500 md:ml-auto">
                     {date}
                   </motion.p>
                 </motion.div>

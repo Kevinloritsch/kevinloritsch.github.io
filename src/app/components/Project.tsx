@@ -66,8 +66,8 @@ const Project = ({
       <div className="my-1">
         <div className="mx-auto mb-3 flex flex-row justify-center gap-2">
           {links.map(({ icon: Icon, link }, i) => (
-            <motion.div {...hoverAnimation} {...slideIn(i / 3)}>
-              <Link href={link} target="_blank" key={i}>
+            <motion.div {...hoverAnimation} {...slideIn(i / 3)} key={i}>
+              <Link href={link} target="_blank">
                 <Icon className="text-xl" />
               </Link>
             </motion.div>
@@ -78,11 +78,13 @@ const Project = ({
       <motion.div
         className="group relative aspect-[3/2] overflow-hidden rounded-2xl shadow-xl"
         whileHover={{ scale: 1.05, rotate: 1 }}
+        whileTap={{ scale: 1.05, rotate: 1 }}
       >
         <motion.div
           className="absolute inset-0"
           initial={{ opacity: 1 }}
           whileHover={{ opacity: 0.2, scale: 1.1 }}
+          whileTap={{ opacity: 0.2, scale: 1.1 }}
           transition={{ duration: 0.5 }}
         >
           <Image
@@ -98,6 +100,7 @@ const Project = ({
           style={{ backdropFilter: "blur(6px)" }}
           initial={{ opacity: 0 }}
           whileHover={{ opacity: 1 }}
+          whileTap={{ opacity: 1 }}
         >
           <div className="flex flex-col gap-y-4 text-sm text-white">
             <p>{date}</p>
