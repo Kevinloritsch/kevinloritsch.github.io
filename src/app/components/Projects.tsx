@@ -11,17 +11,20 @@ const Projects = () => {
         subtitle={"Hover to learn about each project!"}
       />
       <div className="flex w-full flex-row flex-wrap justify-center">
-        {projectItems.map(({ image, title, date, description, role }, i) => (
-          <div key={i} className="w-2/5 py-8">
-            <Project
-              image={image}
-              title={title}
-              date={date}
-              description={description}
-              role={role}
-            />
-          </div>
-        ))}
+        {projectItems.map(
+          ({ image, title, date, description, role, techStack }, i) => (
+            <div key={i} className="w-2/5 py-8">
+              <Project
+                image={image}
+                title={title}
+                date={date}
+                description={description}
+                role={role}
+                techStack={techStack}
+              />
+            </div>
+          ),
+        )}
       </div>
     </Element>
   );

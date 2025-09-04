@@ -13,7 +13,7 @@ const Landing = () => {
       className="relative mt-[8vh] h-[90vh] w-full"
       style={{
         background:
-          "linear-gradient(to bottom, #C7BED3 0%, #C4BED5 16%, #E4BBB7 32%, #FEBF94 48%, #FEC68F 64%, #FEE2C7 85%, white 100%)",
+          "linear-gradient(to bottom, #C7BED3 0%, #C4BED5 16%, #E4BBB7 32%, #FEBF94 48%, #FEC68F 64%, #FEE2C7 90%, white 100%)",
       }}
     >
       <Element name="home">
