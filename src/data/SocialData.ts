@@ -8,10 +8,10 @@ interface SocialLink {
 }
 
 const socialLinks: SocialLink[] = [
-  { link: "/meow", icon: FaGithub },
-  { link: "/meow", icon: FaLinkedin },
-  { link: "/meow", icon: MdOutlineMarkEmailRead },
-  { link: "/meow", icon: FaNewspaper },
+  { link: "https://github.com/Kevinloritsch", icon: FaGithub },
+  { link: "https://www.linkedin.com/in/kevin-loritsch/", icon: FaLinkedin },
+  { link: "/KevinLoritsch_Resume.pdf", icon: FaNewspaper },
+  { link: "mailto:klori003@ucr.edu", icon: MdOutlineMarkEmailRead },
 ];
 
 export { socialLinks };

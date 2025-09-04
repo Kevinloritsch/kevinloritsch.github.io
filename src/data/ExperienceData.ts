@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
-import ACMLogo from "@/public/experiences/acmLogo.png";
-import UCRLogo from "@/public/experiences/ucrLogo.png";
+import ACMLogo from "@/public/experiences/acmLogo.webp";
+import UCRLogo from "@/public/experiences/ucrLogo.webp";
 
 interface DescriptionEntry {
   description: string;

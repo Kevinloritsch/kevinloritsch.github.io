@@ -1,10 +1,11 @@
 import Header from "@/app/components/Header";
 import Experience from "@/app/components/Experience";
 import experienceItems from "@/data/ExperienceData";
+import { Element } from "react-scroll";
 
 const Experiences = () => {
   return (
-    <div>
+    <Element name="experiences">
       <Header title={"Experiences"} />
       <div className="flex w-full flex-row flex-wrap justify-center">
         {experienceItems.map(({ image, name, entries }, i) => (
@@ -13,7 +14,7 @@ const Experiences = () => {
           </div>
         ))}
       </div>
-    </div>
+    </Element>
   );
 };
 export default Experiences;

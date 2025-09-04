@@ -1,10 +1,11 @@
 "use client";
 import { motion } from "motion/react";
-
-import Image from "next/image";
+import { Link as ScrollLink } from "react-scroll";
 import Link from "next/link";
-import navbarItems from "@/data/NavbarData";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 
+import navbarItems from "@/data/NavbarData";
 import profilePicture from "@/public/profilePicture.webp";
 
 const fadeIn = (delay = 0) => ({
@@ -20,18 +21,50 @@ const hoverAnimation = {
   },
 };
 
+const use10vhAsPixels = () => {
+  const [pixels, setPixels] = useState(0);
+
+  useEffect(() => {
+    const calculatePixels = () => {
+      const viewportHeight = window.innerHeight;
+      setPixels((viewportHeight / 100) * 10);
+    };
+
+    calculatePixels();
+    window.addEventListener("resize", calculatePixels);
+
+    return () => {
+      window.removeEventListener("resize", calculatePixels);
+    };
+  }, []);
+
+  return pixels;
+};
+
 const Navbar = () => {
+  const pixels = use10vhAsPixels();
+
   return (
-    <div className="fixed left-0 top-0 z-50 flex h-[10vh] justify-evenly bg-white px-8 shadow-xl">
-      <div className="flex w-1/2 flex-row items-center gap-4 text-left">
+    <div className="fixed left-0 top-0 z-50 flex h-[10vh] cursor-pointer justify-evenly bg-white px-8 shadow-xl">
+      <Link
+        href="/"
+        className="flex w-1/2 flex-row items-center gap-4 text-left"
+      >
         <Image src={profilePicture} alt="Kevin Loritsch" className="w-1/12" />
         <p className="font-bold">Kevin Loritsch</p>
-      </div>
-      <div className="font flex w-1/2 flex-row items-center justify-end text-right">
+      </Link>
+      <div className="flex w-1/2 flex-row items-center justify-end text-right">
         {navbarItems.map(({ name, link }, i) => (
           <motion.div {...fadeIn(i / 5)} key={i}>
             <motion.div className="pr-4" {...hoverAnimation}>
-              <Link href={link}> {name}</Link>
+              <ScrollLink
+                to={link}
+                smooth={true}
+                offset={-pixels}
+                duration={500}
+              >
+                {name}
+              </ScrollLink>
             </motion.div>
           </motion.div>
         ))}
@@ -39,4 +72,5 @@ const Navbar = () => {
     </div>
   );
 };
+
 export default Navbar;

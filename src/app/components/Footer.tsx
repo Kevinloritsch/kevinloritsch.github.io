@@ -20,8 +20,8 @@ const Footer = () => {
 
   return (
     <div className="border-gray mx-auto h-[10vh] w-2/3 border-t-2 py-8 text-center">
-      <div className="pt-2 text-center">© Kevin Loritsch</div>
-      <div>Last updated at: {lastCommit}</div>
+      <p className="pt-2 text-center">© Kevin Loritsch</p>
+      <p className="pb-8">Last updated at: {lastCommit}</p>
     </div>
   );
 };
