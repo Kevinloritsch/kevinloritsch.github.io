@@ -38,7 +38,6 @@ const slideIn = (delay = 0) => ({
   initial: { opacity: 0, x: -40 },
   whileInView: { opacity: 1, x: 0 },
   transition: { duration: 0.8, delay },
-  viewport: { once: true },
 });
 
 interface DescriptionEntry {

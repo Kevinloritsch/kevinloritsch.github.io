@@ -5,13 +5,6 @@ import { motion } from "motion/react";
 import { IconType } from "react-icons";
 import Link from "next/link";
 
-const hoverAnimation = {
-  whileHover: { scale: 1.1 },
-  transition: {
-    duration: 0.4,
-  },
-};
-
 interface techEntry {
   icon: IconType;
 }
@@ -31,6 +24,31 @@ interface projectProps {
   links: linkEntry[];
 }
 
+const hoverAnimation = {
+  whileHover: { scale: 1.1 },
+  transition: {
+    duration: 0.4,
+  },
+};
+
+const slideIn = (delay = 0) => ({
+  initial: { opacity: 0, x: -10 },
+  whileInView: { opacity: 1, x: 0 },
+  transition: { duration: 0.8, delay },
+});
+
+const moveDown = {
+  initial: { opacity: 0, y: -20 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.8 },
+};
+
+const moveUp = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.8 },
+};
+
 const Project = ({
   image,
   title,
@@ -42,11 +60,13 @@ const Project = ({
 }: projectProps) => {
   return (
     <div className="mx-8">
-      <p className="text-center text-xl font-bold">{title}</p>
+      <motion.p {...moveUp} className="text-center text-xl font-bold">
+        {title}
+      </motion.p>
       <div className="my-1">
         <div className="mx-auto mb-3 flex flex-row justify-center gap-2">
           {links.map(({ icon: Icon, link }, i) => (
-            <motion.div {...hoverAnimation}>
+            <motion.div {...hoverAnimation} {...slideIn(i / 3)}>
               <Link href={link} target="_blank" key={i}>
                 <Icon className="text-xl" />
               </Link>
@@ -88,13 +108,15 @@ const Project = ({
       <div className="flex flex-row justify-evenly pt-3">
         <div className="mr-auto flex flex-row gap-2 pl-4">
           {techStack.map(({ icon: Icon }, i) => (
-            <motion.div {...hoverAnimation} key={i}>
+            <motion.div {...hoverAnimation} {...slideIn(i / 4)} key={i}>
               <Icon className="text-xl" />
             </motion.div>
           ))}
         </div>
 
-        <div className="ml-auto pr-4">{role}</div>
+        <motion.p {...moveDown} className="ml-auto pr-4">
+          {role}
+        </motion.p>
       </div>
     </div>
   );
