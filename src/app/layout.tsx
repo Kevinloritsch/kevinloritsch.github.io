@@ -19,7 +19,7 @@ type LayoutProps = {
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-hidden">
       <body className={poppins.className}>
         <Navbar />
         <ReactQueryClientProvider>{children}</ReactQueryClientProvider>
