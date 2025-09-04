@@ -60,6 +60,24 @@ const experienceItems: ExperienceItem[] = [
         ],
       },
       {
+        name: "Natural Language Processing Research Assistant",
+        date: "Oct 2023 - May 2025",
+        description: [
+          {
+            description:
+              "• Annotated clinical text datasets for negation and hedge detection, supporting biomedical NLP model development",
+          },
+          {
+            description:
+              "• Built analysis scripts in Python to compare annotation quality, track progress, and optimize workflow efficiency",
+          },
+          {
+            description:
+              "• Completed CITI training; contributed to ClinScope corpus development",
+          },
+        ],
+      },
+      {
         name: "Data Structures and Algorithms Grader",
         date: "Oct 2024 - Present",
         description: [
