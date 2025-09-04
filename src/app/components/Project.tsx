@@ -3,9 +3,15 @@
 import Image, { StaticImageData } from "next/image";
 import { motion } from "motion/react";
 import { IconType } from "react-icons";
+import Link from "next/link";
 
 interface techEntry {
   icon: IconType;
+}
+
+interface linkEntry {
+  icon: IconType;
+  link: string;
 }
 
 interface projectProps {
@@ -14,8 +20,34 @@ interface projectProps {
   description: string;
   date: string;
   role: string;
-  techStack?: techEntry[];
+  techStack: techEntry[];
+  links: linkEntry[];
 }
+
+const hoverAnimation = {
+  whileHover: { scale: 1.1 },
+  transition: {
+    duration: 0.4,
+  },
+};
+
+const slideIn = (delay = 0) => ({
+  initial: { opacity: 0, x: -10 },
+  whileInView: { opacity: 1, x: 0 },
+  transition: { duration: 0.8, delay },
+});
+
+const moveDown = {
+  initial: { opacity: 0, y: -20 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.8 },
+};
+
+const moveUp = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.8 },
+};
 
 const Project = ({
   image,
@@ -24,11 +56,24 @@ const Project = ({
   date,
   role,
   techStack,
+  links,
 }: projectProps) => {
   return (
     <div className="mx-8">
-      <p className="text-center text-xl font-bold">{title}</p>
-      <div className="mb-4 text-center">Deploy Links</div>
+      <motion.p {...moveUp} className="text-center text-xl font-bold">
+        {title}
+      </motion.p>
+      <div className="my-1">
+        <div className="mx-auto mb-3 flex flex-row justify-center gap-2">
+          {links.map(({ icon: Icon, link }, i) => (
+            <motion.div {...hoverAnimation} {...slideIn(i / 3)}>
+              <Link href={link} target="_blank" key={i}>
+                <Icon className="text-xl" />
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </div>
 
       <motion.div
         className="group relative aspect-[3/2] overflow-hidden rounded-2xl shadow-xl"
@@ -62,15 +107,16 @@ const Project = ({
       </motion.div>
       <div className="flex flex-row justify-evenly pt-3">
         <div className="mr-auto flex flex-row gap-2 pl-4">
-          {techStack &&
-            techStack.map(({ icon: Icon }, i) => (
-              <div key={i} className="w-full">
-                <Icon className="text-xl" />
-              </div>
-            ))}
+          {techStack.map(({ icon: Icon }, i) => (
+            <motion.div {...hoverAnimation} {...slideIn(i / 4)} key={i}>
+              <Icon className="text-xl" />
+            </motion.div>
+          ))}
         </div>
 
-        <div className="ml-auto pr-4">{role}</div>
+        <motion.p {...moveDown} className="ml-auto pr-4">
+          {role}
+        </motion.p>
       </div>
     </div>
   );

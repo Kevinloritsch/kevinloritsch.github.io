@@ -10,7 +10,7 @@ import SquareRoot from "@/public/projects/squareRoot.webp";
 import { IconType } from "react-icons";
 
 import { RiNextjsFill } from "react-icons/ri";
-import { FaReact, FaFigma } from "react-icons/fa";
+import { FaReact, FaFigma, FaGithub } from "react-icons/fa";
 import {
   SiTypescript,
   SiTailwindcss,
@@ -18,9 +18,15 @@ import {
   SiShadcnui,
 } from "react-icons/si";
 import { PiFileCpp } from "react-icons/pi";
+import { IoIosLink } from "react-icons/io";
 
 interface techEntry {
   icon: IconType;
+}
+
+interface linkEntry {
+  icon: IconType;
+  link: string;
 }
 interface ProjectItem {
   image: StaticImageData;
@@ -28,7 +34,8 @@ interface ProjectItem {
   description: string;
   date: string;
   role: string;
-  techStack?: techEntry[];
+  techStack: techEntry[];
+  links: linkEntry[];
 }
 
 const projectItems: ProjectItem[] = [
@@ -57,6 +64,16 @@ const projectItems: ProjectItem[] = [
       },
       {
         icon: SiPrettier,
+      },
+    ],
+    links: [
+      {
+        icon: FaGithub,
+        link: "https://github.com/acm-ucr/ula-website",
+      },
+      {
+        icon: IoIosLink,
+        link: "https://ula.cs.ucr.edu/",
       },
     ],
   },
@@ -90,6 +107,16 @@ const projectItems: ProjectItem[] = [
         icon: SiShadcnui,
       },
     ],
+    links: [
+      {
+        icon: FaGithub,
+        link: "https://github.com/Kevinloritsch/UCRCS010CHelper",
+      },
+      {
+        icon: IoIosLink,
+        link: "https://kevinloritsch.github.io/UCRCS010CHelper/",
+      },
+    ],
   },
   {
     image: PTSO,
@@ -116,6 +143,16 @@ const projectItems: ProjectItem[] = [
       },
       {
         icon: SiPrettier,
+      },
+    ],
+    links: [
+      {
+        icon: FaGithub,
+        link: "https://github.com/acm-ucr/ptso-website/",
+      },
+      {
+        icon: IoIosLink,
+        link: "https://ptso.ucrhighlanders.org/",
       },
     ],
   },
@@ -149,6 +186,16 @@ const projectItems: ProjectItem[] = [
         icon: SiShadcnui,
       },
     ],
+    links: [
+      {
+        icon: FaGithub,
+        link: "https://github.com/qhgill/final-take/",
+      },
+      {
+        icon: IoIosLink,
+        link: "https://qhgill.github.io/final-take/",
+      },
+    ],
   },
   {
     image: Chess,
@@ -160,6 +207,12 @@ const projectItems: ProjectItem[] = [
     techStack: [
       {
         icon: PiFileCpp,
+      },
+    ],
+    links: [
+      {
+        icon: FaGithub,
+        link: "https://github.com/Kevinloritsch/Chess-Minimax-Parallel",
       },
     ],
   },
@@ -189,6 +242,16 @@ const projectItems: ProjectItem[] = [
       },
       {
         icon: SiPrettier,
+      },
+    ],
+    links: [
+      {
+        icon: FaGithub,
+        link: "https://github.com/acm-ucr/aviatr-website/",
+      },
+      {
+        icon: IoIosLink,
+        link: "https://aviatr.ucrhighlanders.org/",
       },
     ],
   },
@@ -223,6 +286,16 @@ const projectItems: ProjectItem[] = [
         icon: SiShadcnui,
       },
     ],
+    links: [
+      {
+        icon: FaGithub,
+        link: "https://github.com/acm-ucr/leap-website/",
+      },
+      {
+        icon: IoIosLink,
+        link: "https://leap.ucrhighlanders.org/",
+      },
+    ],
   },
   {
     image: SquareRoot,
@@ -233,6 +306,12 @@ const projectItems: ProjectItem[] = [
     techStack: [
       {
         icon: PiFileCpp,
+      },
+    ],
+    links: [
+      {
+        icon: FaGithub,
+        link: "https://github.com/Kevinloritsch/squareRoot",
       },
     ],
   },

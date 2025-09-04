@@ -12,7 +12,7 @@ const Projects = () => {
       />
       <div className="flex w-full flex-row flex-wrap justify-center">
         {projectItems.map(
-          ({ image, title, date, description, role, techStack }, i) => (
+          ({ image, title, date, description, role, techStack, links }, i) => (
             <div key={i} className="w-2/5 py-8">
               <Project
                 image={image}
@@ -21,6 +21,7 @@ const Projects = () => {
                 description={description}
                 role={role}
                 techStack={techStack}
+                links={links}
               />
             </div>
           ),
