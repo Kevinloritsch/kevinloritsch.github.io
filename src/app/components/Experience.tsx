@@ -92,7 +92,7 @@ const Experience = ({ image, name, entries }: experienceProps) => {
               className="relative flex flex-row py-2"
             >
               <div className="absolute -left-1.5 top-4 h-3 w-3 rounded-full bg-gray-500" />
-              <div className="mx-4">
+              <div className="mx-4 w-full">
                 <motion.div className="flex flex-col justify-evenly md:flex-row">
                   <p className="mr-auto text-lg underline">{name}</p>
                   <motion.p {...fadeUp} className="text-gray-500 md:ml-auto">
