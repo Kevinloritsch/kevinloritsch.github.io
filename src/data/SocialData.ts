@@ -11,7 +11,7 @@ interface SocialLink {
 const socialLinks: SocialLink[] = [
   { link: "https://github.com/Kevinloritsch", icon: FaGithub },
   { link: "https://www.linkedin.com/in/kevin-loritsch/", icon: FaLinkedin },
-  { link: "/KevinLoritsch_Resume.pdf", icon: LuFileSpreadsheet },
+  { link: "/Kevin_Loritsch_Resume.pdf", icon: LuFileSpreadsheet },
   { link: "mailto:klori003@ucr.edu", icon: MdOutlineMarkEmailRead },
 ];
 
