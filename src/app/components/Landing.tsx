@@ -75,7 +75,7 @@ const Landing = () => {
               >
                 Hi! My name is Kevin, and I am a Computer Science student at UC
                 Riverside (Chancellor's Scholar, 4.0 GPA) with experience in
-                software engineering, research, and teaching.
+                software engineering, research, and computer science education.
               </motion.p>
               <motion.p {...slideLeft} className="text-center md:text-left">
                 I'm interested in exploring work in algorithm design, AI,

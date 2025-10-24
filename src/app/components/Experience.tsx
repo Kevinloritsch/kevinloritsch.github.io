@@ -14,7 +14,7 @@ const moveUp = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
   transition: {
-    duration: 0.7,
+    duration: 0.4,
   },
 };
 
@@ -22,7 +22,7 @@ const fadeIn = {
   initial: { opacity: 0, x: -30 },
   whileInView: { opacity: 1, x: 0 },
   transition: {
-    duration: 0.7,
+    duration: 0.4,
   },
 };
 
@@ -30,7 +30,7 @@ const fadeUp = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
   transition: {
-    duration: 0.7,
+    duration: 0.4,
   },
 };
 
@@ -87,7 +87,7 @@ const Experience = ({ image, name, entries }: experienceProps) => {
         <div className="border-gray w-full justify-center border-l-2 md:w-5/6">
           {entries.map(({ name, date, description }, i) => (
             <motion.div
-              {...slideIn(i / 3)}
+              {...slideIn(i / 5)}
               key={i}
               className="relative flex flex-row py-2"
             >
